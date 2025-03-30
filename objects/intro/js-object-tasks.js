@@ -49,3 +49,15 @@ if (ticket.hasDiscount) {
   finalPrice = ticket.basePrice;
   console.log(`No discount applied. Price: ${finalPrice}`);
 }
+
+// Task 04
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  email: "jd@gmail.com",
+  phone: "+1 555 370 15",
+};
+let fieldEmail = person["email"];
+let fieldPhone = person["phone"];
+console.log(`Контакт для связи ${fieldEmail}.`);
+console.log(`Контакт для связи ${fieldPhone}.`);
