@@ -100,3 +100,24 @@ ${output}`;
 
 console.log(report);
 
+
+// Task 06 – Beer Menu Formatter
+// Create an object representing a beer with basic properties.
+// Output a formatted string with the name, ABV, and availability.
+// If the beer is not available, show an alternative message.
+
+const beer = {
+  name: "Amazza Torro",
+  abv: 12,
+  isAvailable: true,
+};
+
+let drinkInfo = beer.isAvailable
+  ? `"${beer.name}" — ${beer.abv}% ABV. Availability: yes.`
+  : "Sorry, beer is out of stock. Tap water is today's special.";
+
+let menuOffer = `Today's menu: ${drinkInfo}`;
+console.log(menuOffer);
+
+// Debug: log the beer object to confirm no properties were mutated
+console.log(beer);
