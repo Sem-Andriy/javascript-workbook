@@ -23,3 +23,22 @@ const message = employee.skills.includes(requiredSkill)
   : `${employee.fullName} does not know ${requiredSkill}`;
 
 console.log(message);
+
+// Task 03.
+const ticket = {
+  basePrice: 40,
+  hasDiscount: true,
+  discountPercent: 15,
+};
+
+const discount = Math.round(ticket.basePrice - ticket.basePrice * (ticket.discountPercent / 100));
+const calcDescription = `${ticket.basePrice} - (${ticket.basePrice} * ${ticket.discountPercent / 100}) = ${discount}`;
+const finalPrice = ticket.hasDiscount
+  ? ticket.basePrice - discount
+  : ticket.basePrice;
+
+if (ticket.hasDiscount) {
+  console.log(`Цена со скидкой ${ticket.discountPercent}%: ${calcDescription}$`);
+} else {
+  console.log(`Цена билета: ${ticket.basePrice}$`);
+}
