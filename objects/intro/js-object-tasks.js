@@ -1,4 +1,6 @@
-// Task 01
+// Task 01 – Employee Profile
+// Create an object to represent an employee with name, position, skills, and experience.
+// Output a formatted description based on the object's data.
 
 const employee = new Object();
 
@@ -15,7 +17,10 @@ console.log(
   `${employee.fullName} works as a ${employee.position}, has ${employee.experienceYears} years of experience, and is skilled in: ${employee.skills.join(", ")}.`
 );
 
-// Task 02
+// Task 02 – Skill Check
+// Check if the employee has a specific skill using the includes() method.
+// Output a sentence depending on whether the skill is found or not.
+
 const requiredSkill = "TypeScript";
 
 const message = employee.skills.includes(requiredSkill)
@@ -24,21 +29,23 @@ const message = employee.skills.includes(requiredSkill)
 
 console.log(message);
 
-// Task 03.
+// Task 03 – Ticket Price Calculator
+// Calculate the final price of a ticket based on discount availability.
+// If a discount is applied, subtract the discount percentage from the base price.
+// Output the final result in a readable format.
+
 const ticket = {
   basePrice: 40,
   hasDiscount: true,
   discountPercent: 15,
 };
 
-const discount = Math.round(ticket.basePrice - ticket.basePrice * (ticket.discountPercent / 100));
-const calcDescription = `${ticket.basePrice} - (${ticket.basePrice} * ${ticket.discountPercent / 100}) = ${discount}`;
-const finalPrice = ticket.hasDiscount
-  ? ticket.basePrice - discount
-  : ticket.basePrice;
+let finalPrice;
 
 if (ticket.hasDiscount) {
-  console.log(`Цена со скидкой ${ticket.discountPercent}%: ${calcDescription}$`);
+  finalPrice = Math.round(ticket.basePrice - (ticket.basePrice * ticket.discountPercent) / 100);
+  console.log(`${ticket.basePrice} - ${ticket.discountPercent}% = ${finalPrice}`);
 } else {
-  console.log(`Цена билета: ${ticket.basePrice}$`);
+  finalPrice = ticket.basePrice;
+  console.log(`No discount applied. Price: ${finalPrice}`);
 }
