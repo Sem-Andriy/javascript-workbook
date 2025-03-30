@@ -121,3 +121,20 @@ console.log(menuOffer);
 
 // Debug: log the beer object to confirm no properties were mutated
 console.log(beer);
+
+
+
+// Task 07 – Count Object Keys
+// Create an object and use Object.keys() to count how many top-level properties it contains.
+// Output the result in a formatted message.
+
+const breakfast = {
+  mainDrink: "coffee",
+  secondDrink: "milk",
+  cookies: true,
+};
+
+const quantity = Object.keys(breakfast); // returns an array of keys
+const num = quantity.length;
+
+console.log(`Breakfast includes ${num} main components.`);
