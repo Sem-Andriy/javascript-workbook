@@ -17,6 +17,7 @@ console.log(
   `${employee.fullName} works as a ${employee.position}, has ${employee.experienceYears} years of experience, and is skilled in: ${employee.skills.join(", ")}.`
 );
 
+
 // Task 02 – Skill Check
 // Check if the employee has a specific skill using the includes() method.
 // Output a sentence depending on whether the skill is found or not.
@@ -50,6 +51,8 @@ if (ticket.hasDiscount) {
   console.log(`No discount applied. Price: ${finalPrice}`);
 }
 
+
+
 // Task 04 – Dynamic Property Lookup
 // Given a user profile object, access a property dynamically using a variable.
 // Output the value if the property exists, or show a message if it doesn't.
@@ -68,3 +71,30 @@ if (profile[keyToCheck]) {
 } else {
   console.log(`No data available for ${keyToCheck}`);
 }
+
+
+
+// Task 05 – Task Report Generator
+// Create a formatted task report based on task status.
+// If task is 'done', show a completion message. Otherwise, show days remaining.
+
+const task = {
+  title: "Ticket JD-73715",
+  assignee: "Steven Smith",
+  status: "in progress",
+  deadlineDays: 3,
+};
+
+let output =
+  task.status === "done"
+    ? "✅ Task completed"
+    : `📅 Days until deadline: ${task.deadlineDays}`;
+
+let report = `
+📌 Task: ${task.title}
+👨‍💻 Assignee: ${task.assignee}
+📊 Status: ${task.status}
+${output}`;
+
+console.log(report);
+
