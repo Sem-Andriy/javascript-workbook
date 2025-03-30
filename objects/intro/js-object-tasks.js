@@ -30,6 +30,8 @@ const message = employee.skills.includes(requiredSkill)
 
 console.log(message);
 
+
+
 // Task 03 – Ticket Price Calculator
 // Calculate the final price of a ticket based on discount availability.
 // If a discount is applied, subtract the discount percentage from the base price.
