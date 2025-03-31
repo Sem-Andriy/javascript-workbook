@@ -1,35 +1,33 @@
-// ✅ Basic Loop Challenges in JavaScript
-// A set of beginner-level tasks focused on mastering loops (`for`, `while`)
-// while applying variables, arrays, conditions, and template strings.
+// 1. Beer Rating Collector
+// You have an array with beer ratings from users:
 
-// ---
-// 1. Repeat a Greeting 5 Times
-// Task: Log the phrase "Hello, world!" five times using a `for` loop.
+// const ratings = [4, 5, 3, 0, 5, 2, 4, 0, 3];
+// Create a loop that:
 
-for (let i = 0; i < 5; i++) {
-  console.log(`Hello cruel world ⚔️ ${i}`);
+// skips zero ratings (0)
+// calculates the average rating
+// counts how many users gave the maximum rating (5)
+// Do not use built-in array methods.
+
+const ratings = [4, 5, 3, 0, 5, 2, 4, 0, 3];
+
+let averageRating = (sum = 0);
+const average = [];
+const maxRating = [];
+
+for (let i = 0; i < ratings.length; i++) {
+  const element = ratings[i];
+  // skip zero ratings
+  if (element === 0) continue;
+
+  // count how many users gave the maximum rating
+  if (element === 5) maxRating.push(element);
+
+  // calculate the average rating
+  average.push(element);
+  sum += element;
+  averageRating = sum / average.length;
 }
 
-// Note: i < 5 ensures exactly 5 iterations. If you use i <= 5, it will execute 6 times (from 0 to 5).
-
-// ---
-// 2. Print Each Name in a List
-// Task: Given the array below, log each name to the console.
-
-const names = ["Lena", "Andriy", "Mark", "Sasha"];
-
-for (let i = 0; i < names.length; i++) {
-  console.log(`Hello ${names[i]} 👋🏻`);
-}
-
-// We use names.length to ensure the loop adapts dynamically to the array size.
-
-// ---
-// 3. Sum Numbers from 1 to 100
-// Task: Calculate and log the sum of numbers from 1 to 100 inclusive.
-
-let sum1 = 0;
-for (let i = 1; i <= 100; i++) {
-  sum1 += i;
-}
-console.log("Sum from 1 to 100:", sum1); // Output: 5050
+// prettier-ignore
+console.log(`At the annual beer fair in our village, the new beer "Hoppy Beard" received an average score of ${+averageRating.toFixed(2)} points, and unfortunately only ${maxRating.length} user(s) gave it the maximum rating of ${maxRating[0]} points.`);
