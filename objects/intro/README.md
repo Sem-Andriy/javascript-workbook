@@ -34,5 +34,5 @@ These tasks helped me understand how to create, read, and work with object prope
 
 ---
 
-> This is a beginner-level section. More advanced object topics (methods, nested structures, etc.) will be explored later in the repository.
+> This is a beginner-level section. More advanced object topics (methods, nested structures, etc.) will be explored later.
 
