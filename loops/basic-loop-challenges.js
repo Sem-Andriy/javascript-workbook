@@ -31,3 +31,52 @@ for (let i = 0; i < ratings.length; i++) {
 
 // prettier-ignore
 console.log(`At the annual beer fair in our village, the new beer "Hoppy Beard" received an average score of ${+averageRating.toFixed(2)} points, and unfortunately only ${maxRating.length} user(s) gave it the maximum rating of ${maxRating[0]} points.`);
+
+
+// -------------------------------------------------------- //
+
+
+// 🧩 Task 2: Special Seating Pattern
+// Print a 10-row seating plan, each row having 15 seats.
+// In every EVEN row, every 4th seat must be marked with "O", all others with "X".
+// In ODD rows, all seats are "X".
+// Output the result to the console as lines of characters.
+
+// ✅ Why this task is important:
+// It trains nested loops, modulo operator, alternating logic based on outer loop index,
+// and reinforces control over structure formation using simple conditions.
+
+for (let row = 1; row <= 10; row++) {
+  let line = "";
+
+  for (let seat = 1; seat <= 15; seat++) {
+    // Even-numbered rows have special marking every 4th seat
+    if (row % 2 === 0) {
+      if (seat % 4 === 0) {
+        line += "O";
+      } else {
+        line += "X";
+      }
+    } else {
+      // Odd-numbered rows: all seats are "X"
+      line += "X";
+    }
+  }
+
+  console.log(line);
+}
+
+/*
+Expected console output:
+
+XXXXXXXXXXXXXXX
+XXXOXXXOXXXOXXXO
+XXXXXXXXXXXXXXX
+XXXOXXXOXXXOXXXO
+XXXXXXXXXXXXXXX
+XXXOXXXOXXXOXXXO
+XXXXXXXXXXXXXXX
+XXXOXXXOXXXOXXXO
+XXXXXXXXXXXXXXX
+XXXOXXXOXXXOXXXO
+*/
