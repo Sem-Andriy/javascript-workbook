@@ -1,12 +1,6 @@
 "use strict";
 
-/*
-1. Базовая деструктуризация
-У объекта
-const user = { name: 'Alice', age: 30, city: 'Rome' };
-извлеки `name` и `city` в одноимённые переменные.
-*/
-
+// Helper function
 const safeObject = (obj) => {
   const isPlainObject = (value) =>
     typeof value === "object" && value !== null && !Array.isArray(value);
@@ -17,24 +11,28 @@ const safeObject = (obj) => {
   return obj;
 };
 
-(() => {
-  console.log("--------- TASK 1 ---------");
+// Tasks
+const task1 = () => {
   const user = { name: "Alice", age: 30, city: "Rome" };
   const { name, city } = safeObject(user);
-  console.log(name);
-  console.log(city);
-})();
-/**
- * 2. Переименование и значения по умолчанию
-   Из объекта
-   const opts = { timeout: 100, verbose: true };
-   деструктуризируй в `{ time: timeout, log = false }`.
- */
+  console.log("Task 1:", name, city);
+};
+task1();
 
-(() => {
-  console.log("--------- TASK 2 ---------");
+const task2 = () => {
   const opts = { timeout: 100, verbose: true };
   const { timeout: time, verbose: log = false } = safeObject(opts);
-  console.log(time); // tiem - местная переменная
-  console.log(log); // log - тоже местная переменная
-})();
+  console.log("Task 2:", time, log);
+};
+task2();
+
+const task3 = () => {
+  const settings = {
+    layout: { width: 100, height: 200 },
+    theme: { dark: true },
+  };
+  const { layout: { width: w } = {}, theme: { dark: isDark } = {} } =
+    safeObject(settings);
+  console.log("Task 3:", w, isDark);
+};
+task3();
